@@ -25,10 +25,11 @@
    .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; } 
    /* BUY NOW BUTTON */ .buy-btn { margin-top: 12px; width: 100%; padding: 10px; background: #35751aff; color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 15px; transition: 0.2s; } .buy                                                                                                       -btn:hover { background: #3f7d22; } footer { margin-top: 34px; padding: 22px; border-top: 1px solid rgba(47, 62, 31, 0.08); display: flex; justify-content: space-between; }
    /* Floating Red Call Button */
+/* Floating Red Call Button */
 .kalro-call-btn {
     position: fixed;
-    bottom: 25px;      /* distance from bottom */
-    left: 25px;        /* distance from left */
+    bottom: 100px;       /* sits ABOVE WhatsApp button */
+    right: 25px;         /* now on the RIGHT side */
     width: 60px;
     height: 60px;
     background: #d60000;   /* 🔴 red background */
@@ -45,9 +46,10 @@
 }
 
 .kalro-call-btn:hover {
-    background: #a80000; /* darker red on hover */
+    background: #a80000; /* darker red */
     transform: scale(1.08);
 }
+
 
 </style>
 
@@ -372,6 +374,7 @@
 
 </body>
 </html>
+
 
 
 
