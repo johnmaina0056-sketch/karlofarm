@@ -75,6 +75,18 @@
 <a href="tel:0762457938?" class="kalro-call-btn">
     📞
 </a>
+<!-- ADMIN PANEL -->
+<div id="adminPanel" style="display:none; padding:20px; background:#fff; margin-bottom:20px; border-radius:12px;">
+  <h3>Admin Panel</h3>
+
+  <input type="password" id="adminPass" placeholder="Enter admin password" />
+  <button onclick="loginAdmin()">Login</button>
+
+  <div id="adminControls" style="display:none; margin-top:15px;">
+    <input type="file" id="imageUpload" accept="image/*" />
+    <button onclick="uploadImage()">Upload Image</button>
+  </div>
+</div>
 
     <main>
 
@@ -91,7 +103,7 @@
             <li>Second-calving Fresian dairy cows</li>
             <li>Quality dairy goats</li>
         </ul>
-    </div>
+    <!-- </div>
         <h3>PURE DOPER</h3>
         <div class="grid">
           <div class="card">
@@ -104,7 +116,9 @@
               
             </button>
              <div class="price-tag">KSh 6k–10k • 3–5 months</div>
-          </div>
+          </div> -->
+
+             <div class="grid" id="gallery"></div>
 
           <div class="card">
             <img src="pu02.jfif" />
@@ -371,9 +385,62 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script>
+const ADMIN_PASSWORD = "1234"; // change this
+
+let images = JSON.parse(localStorage.getItem("gallery")) || [];
+
+function loginAdmin() {
+  const pass = document.getElementById("adminPass").value;
+  if (pass === ADMIN_PASSWORD) {
+    document.getElementById("adminControls").style.display = "block";
+    alert("Admin logged in");
+    renderGallery(true);
+  } else {
+    alert("Wrong password");
+  }
+}
+
+function uploadImage() {
+  const file = document.getElementById("imageUpload").files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function () {
+    images.push(reader.result);
+    localStorage.setItem("gallery", JSON.stringify(images));
+    renderGallery(true);
+  };
+  reader.readAsDataURL(file);
+}
+
+function deleteImage(index) {
+  images.splice(index, 1);
+  localStorage.setItem("gallery", JSON.stringify(images));
+  renderGallery(true);
+}
+
+function renderGallery(isAdmin = false) {
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = "";
+
+  images.forEach((img, index) => {
+    gallery.innerHTML += `
+      <div class="card">
+        <img src="${img}">
+        <button class="buy-btn">BUY NOW</button>
+        ${isAdmin ? `<button onclick="deleteImage(${index})" style="background:red;color:#fff;margin-top:6px;">Delete</button>` : ""}
+      </div>
+    `;
+  });
+}
+
+renderGallery();
+</script>
 
 </body>
 </html>
+
 
 
 
