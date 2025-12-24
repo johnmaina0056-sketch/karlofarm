@@ -13,12 +13,11 @@ body {
   background: linear-gradient(180deg,#fcfdf7,#eef7e5);
   color: darkgreen;
   margin: 0;
-  padding: 0;
 }
 
 .container {
   max-width: 600px;
-  margin: 120px auto 40px auto;
+  margin: 120px auto 40px;
   padding: 24px;
   background: white;
   border-radius: 14px;
@@ -32,6 +31,21 @@ h2 { text-align: center; }
   padding: 12px;
   border-radius: 10px;
   margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
 button {
@@ -55,32 +69,42 @@ button:hover {
 <body>
 
 <div class="container">
-<h2>Complete Your Payment</h2>
+  <h2>Complete Your Payment</h2>
 
-<div class="summary">
-  <h3>Order Summary</h3>
-  <p><strong>Item:</strong> <span id="itemTitle"></span></p>
-  <p><strong>Price:</strong> KSh <span id="itemPrice"></span></p>
-</div>
+  <div class="summary">
+    <h3>Order Summary</h3>
+    <p><strong>Item:</strong> <span id="itemTitle"></span></p>
+  </div>
 
-<button id="payNowBtn">Pay Now</button>
+  <label for="amount">Enter Amount (KES)</label>
+  <input
+    type="number"
+    id="amount"
+    placeholder="e.g. 25000"
+    min="1"
+  />
+
+  <button id="payNowBtn">Pay Now</button>
 </div>
 
 <script>
-// Get product info from URL query parameters
+// get item name from URL
 const params = new URLSearchParams(window.location.search);
-const itemTitle = params.get("item") || "Product";
-const itemPrice = Number(params.get("price")) || 0;
+const itemTitle = params.get("item") || "Livestock";
 
 document.getElementById("itemTitle").textContent = itemTitle;
-document.getElementById("itemPrice").textContent = itemPrice;
 
-// Paystack payment function
 function payWithPaystack() {
+
+  const amount = Number(document.getElementById("amount").value);
+
+  if (!amount || amount < 1) {
+    alert("Please enter a valid amount");
+    return;
+  }
 
   const phone = prompt("Enter your phone number for payment:");
 
-  // allow numbers only
   if (!phone || !/^\d+$/.test(phone)) {
     alert("Please enter numbers only for phone number.");
     return;
@@ -89,18 +113,18 @@ function payWithPaystack() {
   let handler = PaystackPop.setup({
     key: "pk_live_5c73d3ff315f5091d1ce1a7216a479ec36939810",
     email: phone + "@kalro.pay",
-    amount: itemPrice * 100,
+    amount: amount * 100, // convert to kobo/cents
     currency: "KES",
     ref: "KALRO_" + Date.now(),
     metadata: {
       custom_fields: [
         { display_name: "Product", value: itemTitle },
-        { display_name: "Phone Number", value: phone }
+        { display_name: "Phone Number", value: phone },
+        { display_name: "Entered Amount", value: amount }
       ]
     },
     callback: function(response) {
       alert("Payment successful! Reference: " + response.reference);
-      // TODO: verify payment on backend
     },
     onClose: function() {
       alert("Payment cancelled");
@@ -110,8 +134,9 @@ function payWithPaystack() {
   handler.openIframe();
 }
 
-// Trigger Paystack when "Pay Now" button is clicked
-document.getElementById("payNowBtn").addEventListener("click", payWithPaystack);
+document
+  .getElementById("payNowBtn")
+  .addEventListener("click", payWithPaystack);
 </script>
 
 </body>
