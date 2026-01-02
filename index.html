@@ -71,29 +71,17 @@ header{
   border-radius:10px;
 }
 
-.buy-btn{
-  display:block;
-  margin-top:12px;
-  width:100%;
-  padding:10px;
-  background:#35751a;
-  color:white;
-  text-align:center;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:700;
-}
-a{
-  display:block;
-  margin-top:12px;
-  width:100%;
-  padding:10px;
-  background:#35751a;
-  color:white;
-  text-align:center;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:700;
+.buy-btn, a {
+  display: inline-block; /* allows multiple elements to sit on the same line */
+  margin-top: 12px;
+  padding: 10px;
+  background: #35751a;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  width: auto; /* remove full-width block */
 }
 .site-footer{
   width:100%;
@@ -431,6 +419,7 @@ Quantity: ${quantity.value}`;
 
 </body>
 </html>
+
 
 
 
