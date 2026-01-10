@@ -425,7 +425,6 @@ header{
     </form>
   </div>
 </div>
-
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -435,6 +434,7 @@ function openPopup(item){
   document.getElementById("itemName").value = item;
   document.getElementById("orderPopup").style.display = "flex";
 }
+
 function closePopup(){
   document.getElementById("orderPopup").style.display = "none";
 }
@@ -449,21 +449,35 @@ document.querySelectorAll(".buy-btn").forEach(btn=>{
 
 document.getElementById("orderForm").addEventListener("submit",e=>{
   e.preventDefault();
-  const msg =
+
+  const itemName = document.getElementById("itemName").value;
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const location = document.getElementById("location").value;
+  const quantity = document.getElementById("quantity").value;
+
+  const msg = 
 `KALRO ORDER
-Item: ${itemName.value}
-Name: ${name.value}
-Phone: ${phone.value}
-Location: ${location.value}
-Quantity: ${quantity.value}`;
-  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,"_blank");
+Item: ${itemName}
+Name: ${name}
+Phone: ${phone}
+Location: ${location}
+Quantity: ${quantity}`;
+
+  window.open(
+    `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
+
   closePopup();
   e.target.reset();
 });
 </script>
 
+
 </body>
 </html>
+
 
 
 
