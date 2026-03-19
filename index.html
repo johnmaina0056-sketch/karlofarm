@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KALRO — Livestock Sales</title>
 
-<!-- Google Tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17947255968"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,20 +13,18 @@
   gtag('js', new Date());
   gtag('config', 'AW-17947255968');
 </script>
+
 <meta name="google-site-verification" content="vJG1Dfk60p2WEIWvw7XeWE7H02w_USdW7UzOi1k7ZtM" />
 
 <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-<style>
 <style>
 :root{
   --accent:#4c9a2a;
   --dark:#2f3e1f;
   --maxw:1200px;
 }
-
-*{box-sizing:border-box}
-
+*{box-sizing:border-box;}
 body{
   margin:0;
   padding-top:100px;
@@ -34,10 +32,8 @@ body{
   background:linear-gradient(180deg,#fcfdf7,#eef7e5);
   color:darkgreen;
 }
-
 header{
-  position:fixed;
-  top:0;left:0;right:0;
+  position:fixed; top:0; left:0; right:0;
   background:#ffffffee;
   backdrop-filter:blur(8px);
   display:flex;
@@ -46,108 +42,53 @@ header{
   padding:10px 20px;
   box-shadow:0 4px 12px rgba(0,0,0,.12);
   z-index:999;
-  flex-wrap:wrap;
 }
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  flex:1 1 250px;
-}
-
-.logo img{
-  width:60px;
-  height:60px;
-  border-radius:10px;
-}
-
-.nav-links{
-  display:flex;
-  gap:12px;
-  flex:1 1 200px;
-  justify-content:flex-end;
-  flex-wrap:wrap;
-}
-
-.nav-links a{
-  background:none;
-  color:#000;
-  text-decoration:underline;
-  font-weight:600;
-  padding:4px 8px;
-}
-
-.container{
-  max-width:var(--maxw);
-  margin:auto;
-  padding:24px 12px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
+.brand{display:flex; align-items:center; gap:14px;}
+.logo img{width:60px; height:60px; border-radius:10px;}
+.container{max-width:var(--maxw); margin:auto; padding:24px;}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;}
 .card{
   background:white;
   padding:16px;
   border-radius:14px;
   box-shadow:0 8px 20px rgba(0,0,0,.08);
   text-align:center;
-  display:flex;
-  flex-direction:column;
 }
-
 .card img{
   width:100%;
-  height:auto;
-  max-height:200px;
+  height:160px;
   object-fit:cover;
   border-radius:10px;
   cursor:pointer;
   transition: transform 0.2s;
 }
-.card img:hover{
-  transform: scale(1.05);
+.card img:hover{transform: scale(1.05);}
+.buy-btn, a{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px;
+  background:#35751a;
+  color:white;
+  text-align:center;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:700;
+  width:auto;
 }
-
-.buy-btn, a {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px;
-  background: #35751a;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 700;
-  width: 100%;
-  box-sizing:border-box;
-}
-
-.price-tag{
-  margin-top:8px;
-  font-weight:600;
-}
-
 .site-footer{
   width:100%;
   background:#2f7d1f;
   color:white;
-  padding:24px 12px;
+  padding:24px 0;
 }
-
 .footer-inner{
   max-width:1200px;
   margin:auto;
-  padding:0 12px;
+  padding:0 20px;
   display:flex;
   flex-wrap:wrap;
   justify-content:space-between;
 }
-
 .fab-container{
   position:fixed;
   bottom:20px;
@@ -155,9 +96,7 @@ header{
   display:flex;
   flex-direction:column;
   gap:12px;
-  z-index:1000;
 }
-
 .fab{
   width:56px;
   height:56px;
@@ -169,9 +108,8 @@ header{
   font-size:28px;
   text-decoration:none;
 }
-
-.fab.whatsapp{background:#25D366}
-.fab.call{background:#35751a}
+.fab.whatsapp{background:#25D366;}
+.fab.call{background:#35751a;}
 
 /* POPUP */
 #orderPopup{
@@ -188,6 +126,14 @@ header{
   padding:10px;
   margin-bottom:10px;
 }
+.nav-links a{
+  background:none;
+  color:#000;
+  text-decoration:underline;
+  font-weight:600;
+  padding:0;
+  margin-left:12px;
+}
 
 /* IMAGE LIGHTBOX */
 #lightboxOverlay{
@@ -198,11 +144,10 @@ header{
   z-index:3000;
   justify-content:center;
   align-items:center;
-  padding:12px;
 }
 #lightboxOverlay img{
-  max-width:100%;
-  max-height:100%;
+  max-width:90%;
+  max-height:90%;
   border-radius:12px;
 }
 #lightboxOverlay span{
@@ -213,113 +158,90 @@ header{
   color:white;
   cursor:pointer;
 }
-
-/* RESPONSIVE MEDIA QUERIES */
-@media (max-width: 768px){
-  header{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:10px;
-  }
-  .nav-links{
-    justify-content:flex-start;
-    gap:8px;
-    margin-top:8px;
-  }
-  .card img{
-    max-height:180px;
-  }
-}
-
-@media (max-width: 480px){
-  .grid{
-    grid-template-columns:1fr;
-  }
-  .card img{
-    max-height:160px;
-  }
-  .buy-btn, a{
-    font-size:14px;
-    padding:8px;
-  }
-  header h2, header small{
-    font-size:14px;
-  }
-  .nav-links a{
-    font-size:14px;
-  }
-}
 </style>
-
 </head>
-
 <body>
 <div id="top"></div>
 
 <header>
-  <div class="brand">
-    <div class="logo">
-      <a href="#top">
-        <img src="logo.jfif" alt="KALRO">
-      </a>
-    </div>
-    <div>
-      <h2>KALRO</h2>
-      <small>Kenya Agricultural & Livestock Research Organisation</small>
-    </div>
+<div class="brand">
+  <div class="logo"><a href="#top"><img src="logo.jfif" alt="KALRO"></a></div>
+  <div>
+    <h2>KALRO</h2>
+    <small>Kenya Agricultural & Livestock Research Organisation</small>
   </div>
-
-  <nav class="nav-links">
-    <a href="#about">About Us</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact Us</a>
-  </nav>
+</div>
+<nav class="nav-links">
+  <a href="#about">About Us</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact Us</a>
+</nav>
 </header>
 
 <div class="container">
+<main>
 
-<!-- MAIN CONTENT START -->
-
-<section class="hero-card" style="margin-top: 18px">
-  <div class="section">
-    <h2>Our Livestock Categories</h2>
-    <ul>
-      <li>Pure healthy calves (4–7 months)</li>
-      <li>Registered Dorper lambs</li>
-      <li>Dorper rams (ready to serve)</li>
-      <li>Second-calving Fresian dairy cows</li>
-      <li>Quality dairy goats</li>
-    </ul>
-  </div>
+<!-- LIVESTOCK INTRO -->
+<section class="hero-card" style="margin-top:18px">
+<h2>Our Livestock Categories</h2>
+<ul>
+<li>Pure healthy calves (4–7 months)</li>
+<li>Registered Dorper lambs</li>
+<li>Dorper rams (ready to serve)</li>
+<li>Second-calving Fresian dairy cows</li>
+<li>Quality dairy goats</li>
+</ul>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="hero-card" style="margin-top:18px">
-  <h2>About KALRO Farm</h2>
-  <p>
-    KALRO Farm is a livestock breeding and agricultural research-based farm
-    located in Naivasha, Kenya. We supply healthy, certified livestock and
-    quality animal feeds to farmers across the country.
-  </p>
+<h2>About KALRO Farm</h2>
+<p>KALRO Farm is a livestock breeding and agricultural research-based farm located in Naivasha, Kenya. We supply healthy, certified livestock and quality animal feeds to farmers across the country.</p>
 </section>
 
 <div id="gallery">
+
+<!-- PURE DORPER -->
+<section class="hero-card" style="margin-top:18px">
+<h3>PURE DORPER</h3>
+<div class="grid">
+  <div class="card"><img src="pu01.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Pure Dorper">Order Now</a><a href="payment.html?item=Pure Dorper">Buy Now</a><div class="price-tag">KSh 6k–10k • 3–5 months</div></div>
+  <div class="card"><img src="pu02.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Pure Dorper">Order Now</a><a href="payment.html?item=Pure Dorper">Buy Now</a><div class="price-tag">KSh 6k–10k • 3–5 months</div></div>
+</div>
+</section>
+
+<!-- GIROLANDO HEIFERS -->
+<section class="hero-card" style="margin-top:18px">
+<h3>GIROLANDO HEIFERS</h3>
+<div class="grid">
+  <div class="card"><img src="girolando.jpeg" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Girolando Heifer">Order Now</a><a href="payment.html?item=Girolando Heifer">Buy Now</a></div>
+  <div class="card"><img src="girolando1.jpeg" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Girolando Heifer">Order Now</a><a href="payment.html?item=Girolando Heifer">Buy Now</a></div>
+</div>
+</section>
+
+<!-- JERSEY HEIFERS -->
+<section class="hero-card" style="margin-top:18px">
+<h3>JERSEY HEIFERS</h3>
+<div class="grid">
+  <div class="card"><img src="je01.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Jersey Heifer">Order Now</a><a href="payment.html?item=Jersey Heifer">Buy Now</a></div>
+  <div class="card"><img src="je02.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Jersey Heifer">Order Now</a><a href="payment.html?item=Jersey Heifer">Buy Now</a></div>
+</div>
+</section>
+<!-- FRESHIAN HEIFERS -->
+<section class="hero-card" style="margin-top:18px">
+<h3>FRESHIAN HEIFERS</h3>
+<div class="grid">
+  <div class="card"><img src="fr01.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Freshian Heifer">Order Now</a><a href="payment.html?item=Freshian Heifer">Buy Now</a></div>
+  <div class="card"><img src="fr02.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Freshian Heifer">Order Now</a><a href="payment.html?item=Freshian Heifer">Buy Now</a></div>
+</div>
+</section>
 
 <!-- NUBIAN GOATS -->
 <section class="hero-card" style="margin-top:18px">
 <h3>NUBIAN GOATS</h3>
 <div class="grid">
-  <div class="card">
-    <img src="images/nubian 1.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=NUBIAN GOATS">Order Now</a>
-    <a href="payment.html?item=NUBIAN GOATS">Buy Now</a>
-    <div class="price-tag">Healthy • Ready for breeding <br>11K to 30K</div>
-  </div>
-  <div class="card">
-    <img src="images/nubian 2.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=NUBIAN GOATS">Order Now</a>
-    <a href="payment.html?item=NUBIAN GOATS">Buy Now</a>
-    <div class="price-tag">11K to 30K</div>
-  </div>
+  <div class="card"><img src="images/nubian 1.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=NUBIAN GOATS">Order Now</a><a href="payment.html?item=NUBIAN GOATS">Buy Now</a><div class="price-tag">Healthy • Ready for breeding <br>11K to 30K</div></div>
+  <div class="card"><img src="images/nubian 2.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=NUBIAN GOATS">Order Now</a><a href="payment.html?item=NUBIAN GOATS">Buy Now</a><div class="price-tag">11K to 30K</div></div>
 </div>
 </section>
 
@@ -327,37 +249,17 @@ header{
 <section class="hero-card" style="margin-top:18px">
 <h3>TOGGENBURG GOATS</h3>
 <div class="grid">
-  <div class="card">
-    <img src="images/toggenburg goat 1.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=TOGGENBURG GOATS">Order Now</a>
-    <a href="payment.html?item=TOGGENBURG GOATS">Buy Now</a>
-    <div class="price-tag">11K to 30K</div>
-  </div>
-  <div class="card">
-    <img src="images/toggenburg goat.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=TOGGENBURG GOATS">Order Now</a>
-    <a href="payment.html?item=TOGGENBURG GOATS">Buy Now</a>
-    <div class="price-tag">11K to 30K</div>
-  </div>
+  <div class="card"><img src="images/toggenburg goat 1.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=TOGGENBURG GOATS">Order Now</a><a href="payment.html?item=TOGGENBURG GOATS">Buy Now</a><div class="price-tag">11K to 30K</div></div>
+  <div class="card"><img src="images/toggenburg goat.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=TOGGENBURG GOATS">Order Now</a><a href="payment.html?item=TOGGENBURG GOATS">Buy Now</a><div class="price-tag">11K to 30K</div></div>
 </div>
 </section>
 
-<!-- SAANEN GOAT -->
+<!-- SAANEN GOATS -->
 <section class="hero-card" style="margin-top:18px">
 <h3>SAANEN GOAT</h3>
 <div class="grid">
-  <div class="card">
-    <img src="images/saanen goat 1.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=SAANEN GOAT">Order Now</a>
-    <a href="payment.html?item=SAANEN GOAT">Buy Now</a>
-    <div class="price-tag">11K to 30K</div>
-  </div>
-  <div class="card">
-    <img src="images/saanen goat 2.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=SAANEN GOAT">Order Now</a>
-    <a href="payment.html?item=SAANEN GOAT">Buy Now</a>
-    <div class="price-tag">11K to 30K</div>
-  </div>
+  <div class="card"><img src="images/saanen goat 1.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=SAANEN GOAT">Order Now</a><a href="payment.html?item=SAANEN GOAT">Buy Now</a><div class="price-tag">11K to 30K</div></div>
+  <div class="card"><img src="images/saanen goat 2.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=SAANEN GOAT">Order Now</a><a href="payment.html?item=SAANEN GOAT">Buy Now</a><div class="price-tag">11K to 30K</div></div>
 </div>
 </section>
 
@@ -365,18 +267,8 @@ header{
 <section class="hero-card" style="margin-top:18px">
 <h3>ALPINE GOATS</h3>
 <div class="grid">
-  <div class="card">
-    <img src="images/alpine goat 1.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=ALPINE GOAT">Order Now</a>
-    <a href="payment.html?item=ALPINE GOAT">Buy Now</a>
-    <div class="price-tag">11K to 30K</div>
-  </div>
-  <div class="card">
-    <img src="images/alpine goat 2.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=ALPINE GOAT">Order Now</a>
-    <a href="payment.html?item=ALPINE GOAT">Buy Now</a>
-    <div class="price-tag">11K to 30K</div>
-  </div>
+  <div class="card"><img src="images/alpine goat 1.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Alpine Goat">Order Now</a><a href="payment.html?item=Alpine Goat">Buy Now</a><div class="price-tag">11K to 30K</div></div>
+  <div class="card"><img src="images/alpine goat 2.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Alpine Goat">Order Now</a><a href="payment.html?item=Alpine Goat">Buy Now</a><div class="price-tag">11K to 30K</div></div>
 </div>
 </section>
 
@@ -384,18 +276,8 @@ header{
 <section class="hero-card" style="margin-top:18px">
 <h3>JERSEY CALVES</h3>
 <div class="grid">
-  <div class="card">
-    <img src="je01.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=JERSEY CALF">Order Now</a>
-    <a href="payment.html?item=JERSEY CALF">Buy Now</a>
-    <div>4–7 months • 25k–50k</div>
-  </div>
-  <div class="card">
-    <img src="je02.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=JERSEY CALF">Order Now</a>
-    <a href="payment.html?item=JERSEY CALF">Buy Now</a>
-    <div>4–7 months • 25k–50k</div>
-  </div>
+  <div class="card"><img src="images/jersey calfs 1.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=JERSEY CALVES">Order Now</a><a href="payment.html?item=JERSEY CALVES">Buy Now</a><div class="price-tag">25K to 35K</div></div>
+  <div class="card"><img src="images/jersey calfs 2.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=JERSEY CALVES">Order Now</a><a href="payment.html?item=JERSEY CALVES">Buy Now</a><div class="price-tag">25K to 35K</div></div>
 </div>
 </section>
 
@@ -403,18 +285,8 @@ header{
 <section class="hero-card" style="margin-top:18px">
 <h3>ARYSHIRE CALVES</h3>
 <div class="grid">
-  <div class="card">
-    <img src="aryshire1.jpg" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=ARYSHIRE CALF">Order Now</a>
-    <a href="payment.html?item=ARYSHIRE CALF">Buy Now</a>
-    <div>4–7 months • 25k–50k</div>
-  </div>
-  <div class="card">
-    <img src="aryshire2.jpg" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=ARYSHIRE CALF">Order Now</a>
-    <a href="payment.html?item=ARYSHIRE CALF">Buy Now</a>
-    <div>4–7 months • 25k–50k</div>
-  </div>
+  <div class="card"><img src="images/ayshire calves.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=ARYSHIRE CALVES">Order Now</a><a href="payment.html?item=ARYSHIRE CALVES">Buy Now</a><div class="price-tag">25K TO 35K</div></div>
+  <div class="card"><img src="images/ayshire calves 1.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=ARYSHIRE CALVES">Order Now</a><a href="payment.html?item=ARYSHIRE CALVES">Buy Now</a><div class="price-tag">25K TO 35K</div></div>
 </div>
 </section>
 
@@ -422,80 +294,44 @@ header{
 <section class="hero-card" style="margin-top:18px">
 <h3>FRESHIAN CALVES</h3>
 <div class="grid">
-  <div class="card">
-    <img src="fr01.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=FRESHIAN CALF">Order Now</a>
-    <a href="payment.html?item=FRESHIAN CALF">Buy Now</a>
-    <div>4–7 months • 25k–50k</div>
-  </div>
-  <div class="card">
-    <img src="fr02.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=FRESHIAN CALF">Order Now</a>
-    <a href="payment.html?item=FRESHIAN CALF">Buy Now</a>
-    <div>4–7 months • 25k–50k</div>
-  </div>
+  <div class="card"><img src="images/freshian calves 2.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=FRESHIAN CALVES">Order Now</a><a href="payment.html?item=FRESHIAN CALVES">Buy Now</a><div class="price-tag">25K TO 35K</div></div>
+  <div class="card"><img src="images/freshian calves.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=FRESHIAN CALVES">Order Now</a><a href="payment.html?item=FRESHIAN CALVES">Buy Now</a><div class="price-tag">25K TO 35K</div></div>
 </div>
 </section>
 
-<!-- BOMA RHODES SEED & LUCERN SEED -->
+<!-- BOMA RHODES SEED -->
 <section class="hero-card" style="margin-top:18px">
-<h3>FEEDS & FODDER</h3>
+<h3>BOMA RHODES SEED</h3>
 <div class="grid">
-  <div class="card">
-    <img src="pure lucerne 01.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=Lucerne Bale">Order Now</a>
-    <a href="payment.html?item=Lucerne Bale">Buy Now</a>
-    <div>Lucerne alfalfa (25kg) @ 400</div>
-  </div>
-  <div class="card">
-    <img src="pure lucerne 02.jfif" class="lightbox-img">
-    <a class="buy-btn" href="payment.html?item=Rhodes Hay">Order Now</a>
-    <a href="payment.html?item=Rhodes Hay">Buy Now</a>
-    <div>Rhodes hay (18kg) @ 200</div>
-  </div>
-  <div class="card">
-    <h4>Seeds & Pellets</h4>
-    <div class="price-tag">
-      Lucerne pellets/seeds @ 1000/kg<br>
-      Rhodes seeds @ 400/kg
-    </div>
-  </div>
+  <div class="card"><img src="images/boma rhodes seed 1.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Boma Rhodes Seed">Order Now</a><a href="payment.html?item=Boma Rhodes Seed">Buy Now</a><div class="price-tag">KSH 400</div></div>
 </div>
 </section>
 
-</div> <!-- end gallery -->
+<!-- LUCERN SEED -->
+<section class="hero-card" style="margin-top:18px">
+<h3>LUCERN SEED</h3>
+<div class="grid">
+  <div class="card"><img src="images/lucern seed.jfif" class="lightbox-img"><a class="buy-btn" href="payment.html?item=Lucern Seed">Order Now</a><a href="payment.html?item=Lucern Seed">Buy Now</a><div class="price-tag">KSH1250</div></div>
+</div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact" class="hero-card" style="margin-top:18px">
 <h2>Contact Us</h2>
 <div class="grid">
-  <div class="card">
-    <h4>📍 Location</h4>
-    <p>Naivasha, Kenya</p>
-  </div>
-  <div class="card">
-    <h4>📞 Phone</h4>
-    <p><a href="tel:+254762457938">+254 762 457 938</a></p>
-  </div>
-  <div class="card">
-    <h4>💬 WhatsApp</h4>
-    <p>
-      <a href="https://wa.me/254762457938" target="_blank">
-        Chat with us on WhatsApp
-      </a>
-    </p>
-  </div>
+  <div class="card"><h4>📍 Location</h4><p>Naivasha, Kenya</p></div>
+  <div class="card"><h4>📞 Phone</h4><p><a href="tel:+254762457938">+254 762 457 938</a></p></div>
+  <div class="card"><h4>💬 WhatsApp</h4><p><a href="https://wa.me/254762457938" target="_blank">Chat with us on WhatsApp</a></p></div>
 </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="site-footer">
 <div class="footer-inner">
   <div>
     <strong>KALRO</strong><br>
-    <a href="https://www.google.com/maps/place/Naivasha,+Kenya" target="_blank" style="display:inline-block;margin-top:6px;padding:6px 12px;background:#35751a;color:white;border-radius:8px;text-decoration:none;font-weight:600;">📍 Location</a>
-    <br>
-    <a href="mailto:kalrofarmkenya@gmail.com" style="display:inline-block;margin-top:6px;padding:6px 12px;background:#35751a;color:white;border-radius:8px;text-decoration:none;font-weight:600;">✉️ Email Us</a>
-    <br>
+    <a href="https://www.google.com/maps/place/Naivasha,+Kenya" target="_blank" style="display:inline-block;margin-top:6px;padding:6px 12px;background:#35751a;color:white;border-radius:8px;text-decoration:none;font-weight:600;">📍 Location</a><br>
+    <a href="mailto:kalrofarmkenya@gmail.com" style="display:inline-block;margin-top:6px;padding:6px 12px;background:#35751a;color:white;border-radius:8px;text-decoration:none;font-weight:600;">✉️ Email Us</a><br>
     Phone: +254 762457938
   </div>
   <div>© <span id="year"></span> KALRO FARM</div>
@@ -510,26 +346,24 @@ header{
 
 <!-- POPUP FORM -->
 <div id="orderPopup">
-  <div style="background:#fff;padding:20px;border-radius:12px;width:90%;max-width:420px;position:relative;">
-    <button onclick="closePopup()" style="position:absolute;right:10px;top:10px;border:none;font-size:20px;">×</button>
-    <h3>Order Livestock</h3>
-    <form id="orderForm">
-      <input type="hidden" id="itemName">
-      <input required id="name" placeholder="Full Name">
-      <input required id="phone" placeholder="Phone Number">
-      <input required id="location" placeholder="Location">
-      <input required id="quantity" type="number" min="1" placeholder="Quantity">
-      <button style="width:100%;padding:12px;background:#35751a;color:#fff;border:none;border-radius:10px;font-weight:700;">
-        Send to WhatsApp
-      </button>
-    </form>
-  </div>
+<div style="background:#fff;padding:20px;border-radius:12px;width:90%;max-width:420px;position:relative;">
+<button onclick="closePopup()" style="position:absolute;right:10px;top:10px;border:none;font-size:20px;">×</button>
+<h3>Order Livestock</h3>
+<form id="orderForm">
+<input type="hidden" id="itemName">
+<input required id="name" placeholder="Full Name">
+<input required id="phone" placeholder="Phone Number">
+<input required id="location" placeholder="Location">
+<input required id="quantity" type="number" min="1" placeholder="Quantity">
+<button style="width:100%;padding:12px;background:#35751a;color:#fff;border:none;border-radius:10px;font-weight:700;">Send to WhatsApp</button>
+</form>
+</div>
 </div>
 
 <!-- LIGHTBOX -->
 <div id="lightboxOverlay">
-  <span onclick="closeLightbox()">×</span>
-  <img src="">
+<span onclick="closeLightbox()">×</span>
+<img src="">
 </div>
 
 <script>
@@ -540,9 +374,7 @@ function openPopup(item){
   document.getElementById("itemName").value = item;
   document.getElementById("orderPopup").style.display = "flex";
 }
-function closePopup(){
-  document.getElementById("orderPopup").style.display = "none";
-}
+function closePopup(){document.getElementById("orderPopup").style.display = "none";}
 document.querySelectorAll(".buy-btn").forEach(btn=>{
   btn.addEventListener("click",e=>{
     e.preventDefault();
@@ -557,12 +389,7 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
   const phone = document.getElementById("phone").value;
   const location = document.getElementById("location").value;
   const quantity = document.getElementById("quantity").value;
-  const msg = `KALRO ORDER
-Item: ${itemName}
-Name: ${name}
-Phone: ${phone}
-Location: ${location}
-Quantity: ${quantity}`;
+  const msg = `KALRO ORDER\nItem: ${itemName}\nName: ${name}\nPhone: ${phone}\nLocation: ${location}\nQuantity: ${quantity}`;
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
   closePopup();
   e.target.reset();
@@ -571,16 +398,13 @@ Quantity: ${quantity}`;
 // LIGHTBOX SCRIPT
 const lightboxOverlay = document.getElementById("lightboxOverlay");
 const lightboxImg = lightboxOverlay.querySelector("img");
-document.querySelectorAll(".lightbox-img").forEach(img => {
-  img.addEventListener("click", () => {
+document.querySelectorAll(".lightbox-img").forEach(img=>{
+  img.addEventListener("click", ()=>{
     lightboxImg.src = img.src;
     lightboxOverlay.style.display = "flex";
   });
 });
-function closeLightbox() {
-  lightboxOverlay.style.display = "none";
-}
+function closeLightbox(){lightboxOverlay.style.display = "none";}
 </script>
-
 </body>
 </html>
